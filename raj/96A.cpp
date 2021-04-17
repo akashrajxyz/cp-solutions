@@ -2,6 +2,8 @@
 
 using namespace std;
 
+//96a.cpp problem test
+
 int main(){
   string str;
   cin >> str;
