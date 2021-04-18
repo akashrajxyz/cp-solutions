@@ -3,15 +3,14 @@
 using namespace std;
 
 int main(){
-  string temp ;
-  getline(cin, temp);
-  cout << temp ;
-  if(temp.compare("x++") ^ temp.compare("++x"))
-    cout << "yes" << endl ;
-  else {
-    cout << temp.compare("x++") ;
-    cout << "no" << endl ;
+  string s("skfskfsafafsafa");
+  string temp = "";
+  for(int i = 0 ; i < s.size() ; i++){
+    cin.ignore();
+    temp = string(".") + string(1, s[i] ) ;
+    s.replace(i, 1 , temp);
   }
+  cout << temp << endl ;
 
   return 0;
 }
