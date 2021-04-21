@@ -2,6 +2,20 @@
 
 using namespace std;
 
+int Remainder(string str, int R)
+{
+    // len is variable to store the
+    // length of Number string.
+    int len = str.length();
+    int Num, Rem = 0;
+    // loop that find Remainder
+    for (int i = 0; i < len; i++) {
+        Num = Rem * 10 + (str[i] - '0');
+        Rem = Num % R;
+    }
+    // Return the remainder
+    return Rem;
+}
 int main(){
   int t;
   cin >> t;
@@ -13,8 +27,8 @@ int main(){
     temp = stf ;
     if(stf.size() > 2){
       for( int i=0; i < stf.size() ; i++ ){
-        if(max < stoi(stf.erase(i, 1)) %k )
-          max = stoi(stf.erase(i, 1)) % k ;
+        if(max < Remainder(stf.erase(i, 1), k ))
+          max = Remainder(stf.erase(i, 1), k );
         stf = temp ;
       }
       cout << max << endl ;
