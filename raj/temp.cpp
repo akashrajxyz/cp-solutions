@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-  cout << sizeof(long);
+  string str("hello");
+  string::iterator ing = str.begin();
+  cout << *ing ;
   return 0;
 }
