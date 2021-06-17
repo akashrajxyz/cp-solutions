@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+pair<int,int> tem;
+
+int train(int num){
+  if(num<=0)
+    return 1;
+  if(tem.first == num && tem.first !=-100 && tem.second != -100)
+    return tem.second;
+  return (train(num-10)+train(num-9));
+}
+
+int main(){
+  int t;
+  cin >> t ;
+  while(t--){
+    tem.first = -100;
+    tem.second = -100;
+    string str;
+    int num,sum=0;
+    cin >> str >> num; 
+    sort(str.begin(), str.end());  // "83" -> "38"
+    tem.first = num + str[0]-57 ; // tem.first => 2+3 = 5
+    tem.second = train(tem.first);  // tem.second => train(5)
+    for(auto it:str) // string --> 12, 100 ==> 2393
+      sum+=train(num-57+it);
+    cout << sum << endl;
+  }
+  return 0;
+}
